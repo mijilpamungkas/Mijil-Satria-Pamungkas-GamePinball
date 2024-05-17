@@ -9,6 +9,9 @@ public class LauncherController : MonoBehaviour
     public KeyCode input;
     public float maxTimeHold;
     public float maxforce;
+    public Color color;
+    public Color colorbaru;
+    public float multiplier;
 
     private Renderer renderer;
     private bool isHold;
@@ -32,6 +35,7 @@ public class LauncherController : MonoBehaviour
         if (Input.GetKey(input) && !isHold)
         {
             StartCoroutine(StartHold(collider));
+            GetComponent<Renderer>().material.color = color;
         }
     }
     private IEnumerator StartHold(Collider collider)
@@ -48,8 +52,8 @@ public class LauncherController : MonoBehaviour
             yield return new WaitForEndOfFrame();
             timehold += Time.deltaTime;
         }
-
         collider.GetComponent<Rigidbody>().AddForce(Vector3.forward * force);
         isHold = false;
+        GetComponent<Renderer>().material.color = colorbaru;
     }
 }

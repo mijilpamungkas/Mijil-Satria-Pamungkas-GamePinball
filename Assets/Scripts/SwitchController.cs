@@ -16,6 +16,9 @@ public class SwitchController : MonoBehaviour
     public Collider bola;
     public Material offMaterial;
     public Material onMaterial;
+    public AudioManager audioManager;
+    public VFXManager vfxManager;
+
 
     private SwitchState state;
     private Renderer renderer;
@@ -32,10 +35,21 @@ public class SwitchController : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other == bola)
         {
             Toggle();
         }
+
+        if (other == bola)
+        {
+            //playsfx
+            audioManager.PlaySFX(other.transform.position);
+
+            //playvfx
+            vfxManager.PlayVFX(other.transform.position);
+        }
+        
     }
 
     private void Set(bool active)
