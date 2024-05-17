@@ -18,7 +18,9 @@ public class SwitchController : MonoBehaviour
     public Material onMaterial;
     public AudioManager audioManager;
     public VFXManager vfxManager;
+    public float score;
 
+     public ScoreManager scoreManager;
 
     private SwitchState state;
     private Renderer renderer;
@@ -78,6 +80,8 @@ public class SwitchController : MonoBehaviour
             {
                 Set(true);
             }
+            //score add
+            scoreManager.AddScore(score);
         }
 
     private IEnumerator Blink(int times)

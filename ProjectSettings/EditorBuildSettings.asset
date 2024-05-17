@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 88ad3b312d523d74985eba45da61cc8e
+  - enabled: 1
+    path: Assets/Scenes/Pinball Game.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: f9447b12fa1f548439c65610e81c5da4
   m_configObjects: {}
